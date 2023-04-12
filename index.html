@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P_Definitivo_Web_Orlas</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="scripts/scriptlogin.js"></script>
 </head>
 
 <body>
@@ -113,8 +114,38 @@
                 </div>
             </li>
         </ul>
-    </nav>
+    
+<!-- --------------------------User and password---------------------------------- -->
+<ul>
+    <li>
+        <button class="boton" id="login">Login</button>
+        <div class="sublogin">
+            
+               <form action="">
 
+                <label>
+                <input placeholder="Usuario" class="sub" type="User" id="username">
+            </label>
+
+            <label>
+                <input placeholder="Contraseña" class="sub" type="password" id="password">
+            </label>
+            <label>
+               <input type="button" value="Entrar" onclick="loguear()" id="entrar">
+            </label>
+
+
+               </form>
+                
+              
+            </div>
+        </div>
+    </li>
+</nav>
+    
+
+   
+       
     <!-- ------------------------------------------------------------- -->
     <main>
 
