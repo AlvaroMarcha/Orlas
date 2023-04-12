@@ -1,0 +1,362 @@
+@import url('colors.css');
+
+@font-face {
+    font-family: 'LaSalle';
+    src: url('../fonts/IndivisaTextSansBold.otf');
+}
+
+@font-face {
+    font-family: 'LaSalle2';
+    src: url("../fonts/OpenDyslexicRegular.otf");
+}
+
+
+:root {
+    --amarilloSalle: rgb(232, 179, 0);
+    --amarilloSalleVar1: #ffc60aa6;
+    --azulSalle: rgb(0, 18, 143);
+    --azulSalleVar1: rgb(0, 19, 143);
+    --blanco: #fff2d6;
+
+}
+
+
+* {
+    font-family: LaSalle2;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 17px;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+/* -------------------------------------------------- */
+
+#switch {
+    display: grid;
+    width: 460px;
+    height: 50px;
+    /* border: 1px solid black; */
+
+    grid-template-columns: 60% 10%;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        'info button'
+    ;
+
+
+    position: absolute;
+    top: 16px;
+    left: 30px;
+
+}
+
+#switch>p {
+    grid-area: info;
+    text-align: center;
+    padding-top: 10px;
+
+
+    transition: all 1s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+}
+
+#switch>button {
+    grid-area: button;
+    background-image: url(../img/icons/eso.png);
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    /* box-shadow: 0px 0px 10px black; */
+
+}
+
+
+
+
+/* -------------------------------------------------- */
+
+nav {
+    display: flex;
+    width: 100%;
+    height: max-content;
+    margin: auto;
+    justify-content: center;
+    background-color: var(--amarilloSalle);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    position: relative;
+    margin-right: 20px;
+}
+
+nav ul li .boton {
+    display: block;
+    width: 100px;
+    height: 50px;
+    color: var(--amarilloSalle);
+    background-color: var(--azulSalle);
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: LaSalle;
+
+
+    margin-top: 15px;
+}
+
+nav ul li .boton:focus {
+    outline: none;
+}
+
+nav ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+nav ul li .submenu li {
+    margin-bottom: 10px;
+}
+
+nav ul li .submenu li:last-child {
+    margin-bottom: 0;
+}
+
+nav ul li .submenu li a {
+    display: block;
+    padding: 5px;
+    color: #333;
+    text-decoration: none;
+}
+
+nav ul li .submenu li a:hover {
+    background-color: #ddd;
+}
+
+nav ul li.activo .submenu {
+    display: block;
+}
+
+nav ul li .submenu .card {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li .submenu .card a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+nav ul li .submenu .card a:hover {
+    background-color: #f9f9f9;
+}
+
+nav ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 90%;
+    left: 0;
+    padding: 10px;
+    background: linear-gradient(rgb(232, 179, 0), rgba(0, 19, 143, 0.829));
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+nav ul li .submenu .subbotones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+nav ul li .submenu .subboton {
+    flex-basis: calc(33.33% - 10px);
+    background-color: rgb(0, 18, 143);
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    color: rgb(232, 179, 0);
+    display: block;
+    width: 300px;
+    height: 40px;
+    padding-top: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+nav ul li .submenu .subboton:hover {
+    background-color: #f9f9f9;
+}
+
+/* ------------------------------------------ */
+main {
+    position: relative;
+    z-index: -10;
+
+}
+
+main>div.slider-container>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+
+}
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--azulSalle);
+    z-index: 5;
+
+}
+
+.slider {
+    position: relative;
+    width: 60%;
+    height: 90%;
+    background-image: url('../img/star-1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -20px;
+    z-index: 20;
+
+    border-radius: 10px;
+    border: 5px solid rgb(94, 94, 95);
+    box-shadow: 0px 0px 30px 0px rgb(0, 0, 0),
+        inset 0px 0px 100px rgba(255, 255, 255, 0.753);
+}
+
+/* -------------------------------------------------------------- */
+
+#radio {
+    display: block;
+    width: 70px;
+    height: 50px;
+
+    position: fixed;
+    bottom: 100px;
+    right: -85px;
+
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+
+}
+
+
+/* -------------------------------------------------------------- */
+
+footer {
+    background: linear-gradient(rgb(0, 18, 143) 10%, rgb(232, 179, 0));
+    /* background-color: #cecec7; */
+    width: 100%;
+    height: 15vh;
+    color: #fcfcfc;
+    text-align: center;
+}
+
+footer .container{
+    background: linear-gradient(rgb(226, 176, 9), rgb(0, 18, 143) );
+    display: block;
+    width: 100%;
+    height: 70px;
+    border-top: 1px solid white;
+
+}
+
+footer p {
+    padding-top: 10px;
+    text-align: center;
+    margin: 0;
+}
+
+footer #social{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+footer #social p{
+    position: relative;
+    top:70px;
+    left: -85px;
+    color: black;
+    font-weight: bolder;
+
+}
+
+
+
+footer div#social img:first-child{
+    margin-left: 110px;
+
+
+}
+
+footer div#social img{
+    
+    margin-top: 15px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 10px rgb(251, 255, 0); */
+
+}
+
+
+/* ----------------------------------------------------- */
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(193, 206, 12, 0.822);
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(19, 6, 196, 0.678);
+    
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #008cffbd;
+}
