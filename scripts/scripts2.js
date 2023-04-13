@@ -23,9 +23,4 @@ switchB.addEventListener("click", function () {
     switchValue = document.getElementById("switchB").value="eso";
   }
 
-  
-
-
-
-
 });
