@@ -26,7 +26,21 @@ document.addEventListener("click", (event) => {
 // Cargar la siguiente imagen en el slider
 slider.style.backgroundImage = `url(${images[currentIndex]})`; //Cargar la imagen PROMOCION
 
-setInterval(loadNextImage, 120000);
+reanudar();
+
+//Funciones 
+function reanudar(){
+  intervalId=setInterval(loadNextImage, 10000);
+}
+
+function pausar(){
+  clearInterval(intervalId);
+  setTimeout(function(){
+    reanudar();
+  }, 120000);
+
+}
+
 
 function loadNextImage() {
   // Cargar la siguiente imagen en el slider
@@ -39,8 +53,6 @@ function loadNextImage() {
   }
 
 }
-
-
 
 // Cargar la primera imagen
 // loadNextImage();
@@ -100,10 +112,8 @@ function getImg(imgValue) {
 
   }, 120000);
 
-  
-
+  pausar();
 }
-
 
 // --------------------------------
 const pathImgEso = "../img/eso/";
