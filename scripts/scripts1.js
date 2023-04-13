@@ -26,7 +26,7 @@ document.addEventListener("click", (event) => {
 // Cargar la siguiente imagen en el slider
 slider.style.backgroundImage = `url(${images[currentIndex]})`; //Cargar la imagen PROMOCION
 
-setInterval(loadNextImage, 10000);
+setInterval(loadNextImage, 120000);
 
 function loadNextImage() {
   // Cargar la siguiente imagen en el slider
@@ -98,7 +98,7 @@ function getImg(imgValue) {
     radio.pause();
     radioContainer.style.right = "-85px";
 
-  }, 60000);
+  }, 120000);
 
   
 
